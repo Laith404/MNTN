@@ -1,0 +1,644 @@
+@import config
+
+// animation \\
+@keyframes  down
+  0%
+    transform: translateY(-15%)
+  100%
+    transform: translateY(15%)
+
+
+.header
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 1000
+  .content
+    padding:
+      top: 32px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .logo
+      color: #fff
+      font:
+        size: 2rem
+        family: $titlefont
+        weight: 700
+    nav
+      text-align: center
+      height: 100%
+      display: inline-block 
+      ul
+        position: relative
+        display: flex
+        li
+          margin: 0 .625rem
+          a
+            padding: 0 .625rem
+            color: #fff
+            font:
+              size: 1.125rem
+              weight: 700
+              family: $userfont
+    .account
+      color: #fff
+      font:
+        size: 1.0625rem
+        weight: 700
+      height: 100%
+      display: flex
+      align-items: center
+      &::before
+        content: ''
+        width: 1.5rem
+        height: 1.5rem
+        margin:
+          right: .5rem
+        background:
+          image: url('../img/dest/account.svg')
+          size: contain
+          repeat: no-repeat
+        display: block
+  
+.social-follow
+  position: fixed
+  top: 38%
+  left: 5rem
+  transform: translateY(-50%)
+  width: auto
+  z-index: 10
+  display: block
+  .follow
+    writing-mode: vertical-rl
+    display: inline-block
+    cursor: default
+    margin:
+      bottom: .75rem
+    font:
+      size: 1.125rem
+      weight: 700
+  .social
+    a
+      padding: .625rem .75rem
+      margin: 0 -.75rem
+      display: inline-block
+
+
+.nav-site
+  position: fixed
+  top: 38%
+  right: 5rem 
+  transform: translateY(-50%)
+  width: auto
+  z-index: 10
+  display: flex
+  flex-direction: column
+  .scroll-block
+    position: relative
+    height: 3.75rem
+    width: 4.8125rem
+    margin:
+      right: 1.5625rem
+    text-align: right
+    float: right
+    display: inline-flex
+    align-items: center
+    justify-content: flex-end
+    color: #fff
+    font:
+      size:  1.125rem
+      weight: 700
+    cursor: pointer
+    &::before
+      content: ''
+      width: .0625rem
+      height: 3.78rem
+      position: absolute
+      right: -33%
+      top: 0
+      background: #fff
+      opacity: .5
+      display: inline-block
+    &.active::after
+      content: ''
+      width: .0625rem
+      height: 3.8125rem
+      position: absolute
+      right: -33%
+      top: 0
+      background: #fff
+      display: inline-block
+
+
+
+
+
+
+
+
+
+.banner
+  position: relative
+  width: 100%
+  height: 103.125rem
+  overflow: hidden
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  &::before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 62.5rem
+    bottom: 0rem
+    background: linear-gradient(to top, $bgcolor , transparent)
+    z-index: 9
+  .content
+    position: absolute
+    z-index: 1
+    top: 22.5%
+    left: 50%
+    width: 100%
+    transform: translate(-50%,-50%)
+    display: flex
+    justify-content: center
+    .title
+      white-space: pre-line
+    .text-zone
+      z-index: 1
+    .subtitle
+      margin:
+        bottom: 2rem
+    .btn
+      color: #fff
+      margin:
+        top: 3.125rem
+      &::after
+        width: 1rem
+        height: 1.5rem
+        transform: rotate(0)
+        filter: invert(0%) sepia(1%) saturate(2801%) hue-rotate(45deg) brightness(113%) contrast(100%)
+        animation: down 1s infinite alternate
+
+  img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: auto
+    object-fit: cover
+    pointer-events: none
+    transition: .05s all ease-in-out
+    z-index: -1
+    &:nth-child(2)
+      top: auto
+      bottom: -20rem
+      width: 100%
+      z-index: 2
+    &:nth-child(3)
+      top: auto
+      left: 0rem
+      bottom: -3.125rem
+      width: 100%
+      z-index: 3
+ 
+.allcontent
+  margin:
+    top: -6.25rem
+  .block
+    .typical-img
+      &::before
+        padding:
+          bottom: 137.41%
+    .content
+      height: 100vh
+      display: flex
+      align-items: center
+      justify-content: center
+      .text-zone
+        position: relative
+        &::before
+          counter-increment: blocks
+          content: '0' counter(blocks)
+          position: absolute
+          top: -6.25rem
+          left: -9.375rem
+          line-height: 1
+          font:
+            size: 15rem
+            weight: 700
+          color: #fff
+          opacity: .1
+          
+
+        .title
+          margin:
+            bottom: 1.6875rem
+        p
+          padding:
+            bottom: 1.6875rem
+          line-height: 1.65
+          display: block
+
+.footer
+  .content
+    padding:
+      top: 6.25rem  
+      bottom: 7.5rem
+    .logo
+      color: #fff
+      font:
+        size: 2rem
+        family: $titlefont
+        weight: 700
+      margin:
+        bottom: 1.5rem
+    p
+      width: 70%
+      line-height: 1.65
+      font:
+        size: 1.125rem
+        weight: 700
+      display: block
+    .info
+      position: relative
+      margin:
+        top: 6.25rem
+      display: block
+    ul
+      span 
+        color: $accent
+        font:
+          size: 1.5rem
+          weight: 700
+        line-height: 1.65
+        margin:
+          bottom: 1.5rem
+      li
+        margin:
+          top: .5rem
+          bottom: .5rem
+        display: block
+        &:first-child
+          margin:
+            top: 0
+        &:last-child
+          margin:
+            bottom: 0
+        a
+          color: #fff
+          font:
+            size: 1.125rem
+            weight: 500
+          line-height: 1.65
+
+
+
+// scroll
+html
+  &::-webkit-scrollbar 
+    width: 5px
+    background-color: transparent
+
+
+
+  &::-webkit-scrollbar-thumb 
+    border-radius: 10px
+    background-color: #ffffff88
+
+
+  &::-webkit-scrollbar-track 
+
+    border-radius: 10px
+    background-color: transparent
+
+
+@media screen and (max-width: 100rem)
+  .banner
+    img:nth-child(1)
+      height: 85%
+
+
+// hamburger
+.hamburger
+  display: none
+@media screen and (max-width: 90rem)
+  .container
+    padding: 0 3rem
+  .social-follow
+    left: 3rem
+  .nav-site
+    right: 3rem
+  .banner
+    height: 76.125rem
+  .allcontent
+    margin-top: 0
+  .title
+    font:
+      size: 3rem
+  
+  .footer .content p
+    width: 100%
+    font:
+      size: 1rem
+  .footer .content ul li a
+    font:
+      size: 1rem
+  .footer .content ul span
+    font:
+      size: 1.25rem
+  .footer .content .info
+    font:
+      size: 0.75rem
+  
+  .allcontent .block .content .text-zone::before
+    left: -7.375rem
+    font:
+      size: 13rem
+
+
+@media screen and (max-width: 75rem)
+  // menu open
+  .header.active .content
+    .logo
+      color: $bgcolor
+    .account::before
+      filter: invert(90%) sepia(30%) saturate(1434%) hue-rotate(158deg) brightness(94%) contrast(93%)
+    nav
+      opacity: 1
+      z-index: 1000
+      transition-delay: 2s
+      transition: 1s ease-in-out
+      transform: scale(1)
+      ul li a
+        transform: scale(1)
+        transition: 1s ease-in-out
+      &::after
+        width: 187.5rem
+        height: 187.5rem
+        transition: 1s ease-in-out
+        z-index: 999
+
+
+
+  .container
+    padding: 0 $gutter
+  .header .content
+    .logo
+      flex: 1
+      transition-delay: 1s
+      transition: .5s ease-in-out
+      z-index: 1001
+    .account
+      font:
+        size: 0
+      margin:
+        bottom: .5rem
+      padding: .9375rem
+      z-index: 1000
+      &::before
+        width: 2rem
+        height: 2rem
+        margin: 0 
+        transition-delay: 1s
+        transition: .5s ease-in-out
+    nav
+      display: block
+      position: absolute
+      width: 100%
+      height: 100vh
+      left: 0
+      top: 0
+      z-index: -1
+      opacity: 0
+      transition: .5s ease-in-out
+      transform: scale(0)
+      &::after
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        border-radius: 100%
+        background: #fff
+        display: block
+        z-index: -1
+        transition: .5s ease-in-out
+      ul
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-70%)
+        flex-direction: column
+        z-index: 1000
+        li
+          padding: .3125rem
+          margin: .625rem
+          a
+            color: $bgcolor
+            opacity: 1
+            transition-delay: .5s
+            font:
+              size: 1.5625rem
+            transform: scale(0)
+            transition: 1s ease-in-out
+
+  .hamburger
+    display: block
+    z-index: 1000
+  .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
+    background:
+      color: #fff
+  .hamburger.is-active
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 90%
+      border: 2.5px solid rgba(11, 29, 38,.25)
+      border-radius: .625rem
+      display: block
+    .hamburger-inner, .hamburger.is-active .hamburger-inner:after, .hamburger.is-active .hamburger-inner:before
+      background:
+        color: $bgcolor
+    
+
+  .social-follow
+    display: none
+  .fixed-scroll .content .row
+    justify-content: flex-end
+
+
+  h1.title
+    font:
+      size: 4rem
+  .banner .content .btn
+    margin:
+      top: 1.25rem
+  .banner .content .subtitle
+    margin:
+      bottom: 1.25rem
+  
+  .banner img:nth-child(2)
+    height: 70%
+  
+
+  .allcontent .block .content .text-zone
+    padding:
+      top: 6.25rem
+
+  .allcontent .block .content .text-zone::before
+    left: -4.7rem
+  
+  .footer-info_company
+    margin:
+      top: 3.125rem
+    text-align: center
+
+  .footer ul
+    text-align: center
+  .footer .content .info
+    margin:
+      top: .625rem
+  .banner::before
+    height: 20rem
+
+@media  screen and ( max-width: 60rem )
+  .title
+    font:
+      size: 2rem
+  p
+    font:
+      size: .875rem
+  .banner .content
+    left: 35%
+  h1.title
+    font:
+      size: 2.5rem
+  .nav-site .scroll-block
+    font:
+      size: .875rem
+    height: 3rem
+    &.active
+      &::after
+        height: 3rem
+    &::before
+      height: 3rem
+  .allcontent .block .content
+    height: auto
+    padding: 3.125rem 0 
+  .allcontent .block .content .text-zone::before
+    left: -2.7rem
+    font:
+      size: 9rem
+  .allcontent .block .content .text-zone
+    padding:
+      top: 2.25rem
+  .allcontent .block .content .text-zone .title
+    margin:
+      bottom: .9375rem
+  .allcontent .block .content .text-zone p
+    width: 90%
+  .subtitle
+    font:
+      size: 1rem
+  .nav-site
+    right: 1.875rem
+  .banner::before
+    height: 15rem
+@media screen and (max-width: 37.5rem)
+  .header .content
+    padding:
+      top: .9375rem
+  .subtitle
+    font:
+      size: .625rem
+    letter-spacing: .25rem
+    &::before
+      width: 2.5rem
+      margin:
+        right: 1rem
+  .title
+    font:
+      size: 1.25rem
+  p
+    font:
+      size: .75rem
+  .btn
+    font:
+      size: .875rem
+    &::after
+      width: .875rem!important
+      height: .875rem!important
+  .container
+    padding: 0 .9375rem
+  .nav-site
+    right: .9375rem
+  .banner
+    height: 100vh
+    &::before
+      height: 6.25rem
+    .content
+      left: 0
+      transform: translate(0,-50%)
+      top: 23rem
+      padding: 0 .9375rem
+      justify-content: inherit
+      .subtitle
+        font:
+          size: .625rem
+        letter-spacing: .25rem
+        &::before
+          width: 2.5rem
+          margin:
+            right: 1rem
+      .title
+        font:
+          size: 1.6rem
+      .btn
+        margin:
+          top: .9375rem
+    img
+      &:nth-child(2)
+        height: 95%
+      &:nth-child(3)
+        bottom: 0
+        height: 30%
+  
+  .allcontent .block .content .text-zone::before
+    top: 0
+    left: -2.5rem 
+    font:
+      size: 5rem
+  
+  .nav-site .scroll-block
+    margin:
+      right: 1rem
+    &::before
+      right: -20%
+    &.active::after
+      right: -20%
+  
+  .allcontent .block .content
+    height: 100vh
+    padding: 0
+  
+  .footer ul:first-child
+    margin:
+      bottom: 30px
+  
+  .footer .content
+    padding:
+      bottom: 2.5rem
+
+@media  (min-width: 62.5rem) and ( max-width: 64rem ) and (max-height: 768px)
+  .allcontent .block .content
+    margin: 15.625rem 0
+  
